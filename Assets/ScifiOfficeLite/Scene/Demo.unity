@@ -9056,7 +9056,6 @@ GameObject:
   - component: {fileID: 1483392710}
   - component: {fileID: 1483392709}
   - component: {fileID: 1483392708}
-  - component: {fileID: 1483392707}
   - component: {fileID: 1483392711}
   m_Layer: 0
   m_Name: Button_Blue
@@ -9075,25 +9074,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.69310284, z: -0, w: 0.7208387}
   m_LocalPosition: {x: -1.16, y: 0.596, z: -9.9}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 283640302}
   m_LocalEulerAnglesHint: {x: 0, y: -87.752, z: 0}
---- !u!114 &1483392707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483392705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f36551f02c9f654a958fe321215c14f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleButton
-  buttonID: Blue
-  manager: {fileID: 943901610}
 --- !u!65 &1483392708
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9109,7 +9094,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -9218,7 +9203,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 943901610}
+        m_TargetAssemblyTypeName: Puzzle2Manager, Assembly-CSharp
+        m_MethodName: PressBlue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -10941,7 +10938,7 @@ GameObject:
   - component: {fileID: 1775927555}
   - component: {fileID: 1775927554}
   - component: {fileID: 1775927553}
-  - component: {fileID: 1775927552}
+  - component: {fileID: 1775927556}
   m_Layer: 0
   m_Name: Button_Green
   m_TagString: Untagged
@@ -10959,25 +10956,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.69310284, z: -0, w: 0.7208387}
   m_LocalPosition: {x: -1.108, y: 0.596, z: -8.581}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 283640302}
   m_LocalEulerAnglesHint: {x: 0, y: -87.752, z: 0}
---- !u!114 &1775927552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775927550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f36551f02c9f654a958fe321215c14f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleButton
-  buttonID: Green
-  manager: {fileID: 943901610}
 --- !u!65 &1775927553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10993,7 +10976,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -11055,6 +11038,90 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775927550}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1775927556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775927550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943901610}
+        m_TargetAssemblyTypeName: Puzzle2Manager, Assembly-CSharp
+        m_MethodName: PressGreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
 --- !u!1 &1787303560
 GameObject:
   m_ObjectHideFlags: 0
@@ -11064,7 +11131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1787303562}
-  - component: {fileID: 1787303561}
+  - component: {fileID: 1787303563}
   m_Layer: 0
   m_Name: Puzzle1_Manager
   m_TagString: Untagged
@@ -11072,22 +11139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1787303561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787303560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6dbec53f14d9ce4daedcd38bb491c24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  socket1: {fileID: 1671026738}
-  socket2: {fileID: 1973038134}
-  socket3: {fileID: 2145032502}
-  powerLight: {fileID: 502830315}
 --- !u!4 &1787303562
 Transform:
   m_ObjectHideFlags: 0
@@ -11103,6 +11154,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1787303563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787303560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6dbec53f14d9ce4daedcd38bb491c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::XRButtonPress
+  socket1: {fileID: 1671026738}
+  socket2: {fileID: 1973038134}
+  socket3: {fileID: 2145032502}
+  powerLight: {fileID: 502830315}
 --- !u!1001 &1809892762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11967,7 +12034,7 @@ GameObject:
   - component: {fileID: 1994085429}
   - component: {fileID: 1994085428}
   - component: {fileID: 1994085427}
-  - component: {fileID: 1994085426}
+  - component: {fileID: 1994085430}
   m_Layer: 0
   m_Name: Button_Red
   m_TagString: Untagged
@@ -11985,25 +12052,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.69310284, z: -0, w: 0.7208387}
   m_LocalPosition: {x: -1.13, y: 0.596, z: -9.21}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 283640302}
   m_LocalEulerAnglesHint: {x: 0, y: -87.752, z: 0}
---- !u!114 &1994085426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994085424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f36551f02c9f654a958fe321215c14f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleButton
-  buttonID: Red
-  manager: {fileID: 943901610}
 --- !u!65 &1994085427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12019,7 +12072,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -12081,6 +12134,90 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994085424}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1994085430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994085424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943901610}
+        m_TargetAssemblyTypeName: Puzzle2Manager, Assembly-CSharp
+        m_MethodName: PressRed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
 --- !u!1001 &1995863061
 PrefabInstance:
   m_ObjectHideFlags: 0

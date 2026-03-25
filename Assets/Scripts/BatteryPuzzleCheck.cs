@@ -1,40 +1,31 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class XRButtonPress : MonoBehaviour
+public class BatteryPuzzleCheck : MonoBehaviour
 {
-    public string buttonID;
-    public Puzzle2Manager manager;
+    public XRSocketInteractor socket1;
+    public XRSocketInteractor socket2;
+    public XRSocketInteractor socket3;
 
-    private XRSimpleInteractable interactable;
+    public GameObject powerLight;
 
-    void Awake()
+    private bool activated = false;
+
+    void Update()
     {
-        interactable = GetComponent<XRSimpleInteractable>();
-    }
+        if (activated) return;
 
-    void OnEnable()
-    {
-        interactable.selectEntered.AddListener(OnPressed);
-    }
-
-    void OnDisable()
-    {
-        interactable.selectEntered.RemoveListener(OnPressed);
-    }
-
-    private void OnPressed(SelectEnterEventArgs args)
-    {
-        Debug.Log("Pressed button: " + buttonID);
-
-        if (manager != null)
+        if (socket1 != null && socket2 != null && socket3 != null &&
+            socket1.hasSelection && socket2.hasSelection && socket3.hasSelection)
         {
-            manager.PressButton(buttonID);
-        }
-        else
-        {
-            Debug.Log("Manager is missing!");
+            activated = true;
+            Debug.Log("POWER ON!");
+
+            if (powerLight != null)
+            {
+                powerLight.SetActive(true);
+            }
         }
     }
 }

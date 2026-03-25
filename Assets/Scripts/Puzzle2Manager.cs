@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Puzzle2Manager : MonoBehaviour
 {
-    public string[] correctOrder = { "Blue", "Red", "Green" };
+    public GameObject successLight;
+
+    private string[] correctOrder = { "Blue", "Red", "Green" };
     private int currentIndex = 0;
     private bool solved = false;
-
-    public GameObject successLight;
 
     public void PressButton(string buttonID)
     {
@@ -33,5 +33,20 @@ public class Puzzle2Manager : MonoBehaviour
             Debug.Log("Wrong order! Resetting puzzle.");
             currentIndex = 0;
         }
+    }
+
+    public void PressBlue()
+    {
+        PressButton("Blue");
+    }
+
+    public void PressRed()
+    {
+        PressButton("Red");
+    }
+
+    public void PressGreen()
+    {
+        PressButton("Green");
     }
 }

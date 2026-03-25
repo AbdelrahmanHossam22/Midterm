@@ -3,6 +3,7 @@ using UnityEngine;
 public class Puzzle2Manager : MonoBehaviour
 {
     public GameObject successLight;
+    public AudioSource audioSource;
 
     private string[] correctOrder = { "Blue", "Red", "Green" };
     private int currentIndex = 0;
@@ -11,6 +12,8 @@ public class Puzzle2Manager : MonoBehaviour
     public void PressButton(string buttonID)
     {
         if (solved) return;
+
+        PlayClickSound();
 
         if (buttonID == correctOrder[currentIndex])
         {
@@ -48,5 +51,13 @@ public class Puzzle2Manager : MonoBehaviour
     public void PressGreen()
     {
         PressButton("Green");
+    }
+
+    private void PlayClickSound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 }

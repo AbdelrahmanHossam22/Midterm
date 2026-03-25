@@ -5,8 +5,9 @@ public class Puzzle3KeypadManager : MonoBehaviour
 {
     public GameObject door;
     public TextMeshProUGUI displayText;
+    public AudioSource audioSource;
 
-    private string currentInput = "----";
+    private string currentInput = "";
     private string correctCode = "1234";
     private bool solved = false;
 
@@ -54,6 +55,7 @@ public class Puzzle3KeypadManager : MonoBehaviour
     {
         if (solved) return;
 
+        PlayClickSound();
         currentInput = "";
         UpdateDisplay();
         Debug.Log("Cleared");
@@ -63,6 +65,7 @@ public class Puzzle3KeypadManager : MonoBehaviour
     {
         if (solved) return;
 
+        PlayClickSound();
         Debug.Log("Entered: " + currentInput);
 
         if (currentInput == correctCode)
@@ -83,6 +86,8 @@ public class Puzzle3KeypadManager : MonoBehaviour
     {
         if (solved) return;
 
+        PlayClickSound();
+
         if (currentInput.Length < correctCode.Length)
         {
             currentInput += digit;
@@ -95,7 +100,22 @@ public class Puzzle3KeypadManager : MonoBehaviour
     {
         if (displayText != null)
         {
-            displayText.text = currentInput;
+            if (currentInput == "")
+            {
+                displayText.text = "----";
+            }
+            else
+            {
+                displayText.text = currentInput;
+            }
+        }
+    }
+
+    private void PlayClickSound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play();
         }
     }
 }

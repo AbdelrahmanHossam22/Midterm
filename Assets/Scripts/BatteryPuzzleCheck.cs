@@ -9,6 +9,7 @@ public class BatteryPuzzleCheck : MonoBehaviour
     public XRSocketInteractor socket3;
 
     public GameObject powerLight;
+    public AudioSource audioSource;
 
     private bool activated = false;
 
@@ -25,6 +26,11 @@ public class BatteryPuzzleCheck : MonoBehaviour
             if (powerLight != null)
             {
                 powerLight.SetActive(true);
+            }
+
+            if (audioSource != null)
+            {
+                audioSource.Play();
             }
         }
     }
